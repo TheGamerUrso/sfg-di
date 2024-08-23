@@ -1,15 +1,18 @@
 package guru.springframework.sfg_di.controllers;
 
-import guru.springframework.sfg_di.services.PetService;
+import org.springframework.stereotype.Controller;
 
-public class PetController {
-    private final PetService petService;
+import com.springframework.pets.PetService;
 
-    public PetController(PetService petService){
-        this.petService = petService;
-    }
+@Controller
+ public class PetController {
+     private final PetService petService;
 
-    public String whichPetIsTheBest(){
-        return petService.getPetType();
-    }
-}
+     public PetController(PetService petService){
+         this.petService = petService;
+     }
+
+     public String whichPetIsTheBest(){
+         return petService.getPetType();
+     }
+ }
