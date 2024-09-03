@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import guru.springframework.sfg_di.repositories.EnglishGreetingRepository;
+import guru.springframework.sfg_di.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfg_di.services.ConstructorGreetingService;
 import guru.springframework.sfg_di.services.I18nEnglishGreetingService;
 import guru.springframework.sfg_di.services.I18nSpanishGreetingService;
@@ -23,9 +25,15 @@ public class GreetingServiceConfig
         return new I18nSpanishGreetingService();
     }
 
+    @Bean
+    EnglishGreetingRepository englishGreetingRepository(){
+        return new EnglishGreetingRepositoryImpl();
+    }
+
     @Profile({"EN","default"})
-    I18nEnglishGreetingService i18nService(){
-        return new I18nEnglishGreetingService();
+    @Bean
+    I18nEnglishGreetingService i18nService(EnglishGreetingRepository englishGreetingRepository){
+        return new I18nEnglishGreetingService(englishGreetingRepository);
     }
 
     @Primary
