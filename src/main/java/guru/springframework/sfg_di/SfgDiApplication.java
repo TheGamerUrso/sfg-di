@@ -3,7 +3,7 @@ package guru.springframework.sfg_di;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
+//import org.springframework.context.annotation.ComponentScan;
 
 import guru.springframework.sfg_di.controllers.ConstructorInjectedController;
 import guru.springframework.sfg_di.controllers.I18nController;
@@ -12,7 +12,7 @@ import guru.springframework.sfg_di.controllers.PetController;
 import guru.springframework.sfg_di.controllers.PropertyInjectedController;
 import guru.springframework.sfg_di.controllers.SetterInjectedController;
 
-@ComponentScan(basePackages = {"guru.springframework.sfg_di", "com.springframework.pets"})
+//@ComponentScan(basePackages = {"guru.springframework.sfg_di", "com.springframework.pets"})
 @SpringBootApplication
 public class SfgDiApplication {
 
