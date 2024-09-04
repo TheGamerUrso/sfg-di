@@ -1,0 +1,4 @@
+guru:
+    username: YmlProdDBUser
+    password: YmlProdPassword
+    jdbcurl: YmlProdUrl
