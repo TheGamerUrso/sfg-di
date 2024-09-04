@@ -27,14 +27,12 @@ public class GreetingServiceConfig
 {
     
     @Bean
-    FakeDataSource FakeDataSource(@Value("${guru.username}")String username,
-                                @Value("${guru.password}")String password,
-                                @Value("${guru.jdbcurl}")String jdbcurl)
+    FakeDataSource FakeDataSource(SfgConfiguration sfgConfiguration)
     {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(username);
-        fakeDataSource.setPassword(password);
-        fakeDataSource.setJdbcurl(jdbcurl);
+        fakeDataSource.setUsername(sfgConfiguration.getUsername());
+        fakeDataSource.setPassword(sfgConfiguration.getPassword());
+        fakeDataSource.setJdbcurl(sfgConfiguration.getJdbcurl());
         return fakeDataSource;
     }
     @Bean
