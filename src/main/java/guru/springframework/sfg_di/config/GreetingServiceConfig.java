@@ -21,7 +21,6 @@ import guru.springframework.sfg_di.services.PrimaryGreetingService;
 import guru.springframework.sfg_di.services.PropertyInjectedGreetingService;
 import guru.springframework.sfg_di.services.SetterInjectedGreetingService;
 
-@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfg_di-config.xml")
 @Configuration
 public class GreetingServiceConfig 
