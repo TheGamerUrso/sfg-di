@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 //import org.springframework.context.annotation.ComponentScan;
 
 import guru.springframework.sfg_di.config.SfgConfiguration;
+import guru.springframework.sfg_di.config.SfgConstructorConfig;
 import guru.springframework.sfg_di.controllers.ConstructorInjectedController;
 import guru.springframework.sfg_di.controllers.I18nController;
 import guru.springframework.sfg_di.controllers.MyController;
@@ -72,6 +73,12 @@ public class SfgDiApplication {
 		System.out.println(sfgConfiguration.getUsername());
 		System.out.println(sfgConfiguration.getPassword());
 		System.out.println(sfgConfiguration.getJdbcurl());
+
+		System.out.println("---------- Constructor Binding");
+		SfgConstructorConfig sfgConstructorConfig = ctx.getBean(SfgConstructorConfig.class);
+		System.out.println(sfgConstructorConfig.getUsername());
+		System.out.println(sfgConstructorConfig.getPassword());
+		System.out.println(sfgConstructorConfig.getJdbcurl());
 
 	}
 }
